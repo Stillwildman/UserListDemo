@@ -4,7 +4,7 @@ import android.util.Log;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.ViewModelProviders;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -60,7 +60,7 @@ public class UiMainActivity extends BaseActivity<ActivityMainBinding> implements
     }
 
     private void initViewModel() {
-        viewModel = ViewModelProviders.of(this).get(UserViewModel.class);
+        viewModel = new ViewModelProvider(this).get(UserViewModel.class);
         viewModel.setStatusCallback(this);
 
         observeStatus();
